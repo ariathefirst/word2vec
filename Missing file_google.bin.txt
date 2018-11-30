@@ -1,0 +1,5 @@
+missing file: google.bin
+
+To use Google's model, you need to download it: https://github.com/mmihaltz/word2vec-GoogleNews-vectors (GoogleNews-vectors-negative300.bin.gz) and rename it to
+google.bin
+It has to be in the same folder as the other files.
