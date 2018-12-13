@@ -30,3 +30,6 @@ our_model.most_similar(positive=['woman', 'female'], negative=['man'], topn=5)
 
 ##### Models on politician related problems
 - In the end, we tested our model again Google's model on politician related problems, which form most of our model's input. The result shows that our model performs better than Google's model on these problems.
+
+##### Progress Updates:
+- Cannot add new vocab to previously trained model. Need to retrain the model using improved data

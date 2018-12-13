@@ -1,0 +1,29 @@
+Model name is  100epochimprovedData2
+doesnt_match res:
+our_model:
+favorable
+newModel:
+favorable
+
+
+doesnt_match res:
+our_model:
+obama
+newModel:
+obama
+
+
+most_similar ex res:
+our_model:
+[('latinos', 0.6830320358276367), ('(including', 0.6655077934265137), ('minorities', 0.6600581407546997), ('non-voters', 0.6593189239501953), ('male', 0.651913046836853)]
+newModel:
+[('hivinfected', 0.5074973106384277), ('reproductive', 0.5016121864318848), ('sterilization', 0.4950098693370819), ('sexually', 0.4695378243923187), ('contraception', 0.4683105945587158)]
+
+
+most_similar res:
+our_model:
+[('contraception', 0.7218250036239624), ('reproductive', 0.6634858250617981), ('maternity', 0.6595326662063599), ('women’s', 0.6545004844665527), ('lifetime', 0.6543616056442261)]
+newModel:
+[('aca', 0.5338796377182007), ('acas', 0.44543683528900146), ('aca’s', 0.4426671862602234), ('prohibition', 0.42666319012641907), ('abortions', 0.4043425917625427)]
+
+

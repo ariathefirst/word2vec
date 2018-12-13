@@ -1,41 +1,68 @@
 import pandas as pd
 import gensim
+import string
 from gensim.models import Word2Vec
 from gensim.models import Word2Vec, KeyedVectors
 
+"""
+# todo:
+focus on one dataset only
+parameter tuning for epoch
+select only article content as input
+"""
 
-model = Word2Vec.load("our_model")
-model.wv.save_word2vec_format('new_model', binary=True)
-print('saved new_model\n')
+def clean_data(dataFilePath):
+	with open(dataFilePath, 'r') as r:
+		# df = pd.read_csv(r)
+		# print('df[0]:', df[0])
+		# print('df[1]:', df[1])
+		# data = df['Article'].dropna()
+		r = [line[:-1] for line in r]
+		data = []
+		exclude = set(string.punctuation)
+		for line in r:
+			# print('line: ')
+			# print(line)
+			line = line.translate(string.punctuation)
+			line = line.lower()
+			line = ''.join(ch for ch in line if ch not in exclude) # remove punc
+			line = line.replace("\xa0", "").replace('"', "").replace("'", "")
+			line = [x for x in line.split(" ") if x] # split into words
+			if line:
+				data.append(line)
+	print(data)
+	print('finished cleaning data.')
+	print(len(data))
+	return(data)
 
-with open('articles3300 2.csv', 'r') as r:
-	df = pd.read_csv(r)
-	data = df['text'].dropna()
-	res = []
-	for line in data:
-		res.append(line)
-print(res)
-"""
-create new 3300 model
-"""
-# model = gensim.models.Word2Vec(
-#     data,
-#     size=150,
-#     window=10,
-#     min_count=2,
-#     workers=10)
-"""
-train new model with 3300 sentences
-"""
-# model.train(data, total_examples=len(data), epochs=10)
-# model.save('new_model')
+if __name__ == "__main__":
+	dataFilePath = 'improvedData2.csv'
+	modelName = '100epochimprovedData2'
+	data = clean_data(dataFilePath)
+	"""
+	train new model based on improved data
+	"""
+	newModel = gensim.models.Word2Vec(
+	    data,
+	    size=150,
+	    window=10,
+	    min_count=1, 
+	    # Default min_count in gensim's Word2Vec is set to 5. 
+	    # If there is no word in your vocab with frequency greater than 4, 
+	    # your vocab will be empty and hence the error.
+	    workers=10)
+	newModel.build_vocab(data, update=True)
+	newModel.train(data, total_examples=len(data), epochs=10)
+	newModel.save(modelName)
 
-"""c
-train new model on top of our_model
-"""
-model.train(res, total_examples=len(res), epochs=10)
-model.save("new_model")
-
-"""
-save 3300 sentences to csv
-"""
+	"""
+	create new 3300 model. 
+	cannot use this model as a standalone model 
+	since many common words not found in articles
+	"""
+	# model = gensim.models.Word2Vec(
+	#     data,
+	#     size=150,
+	#     window=10,
+	#     min_count=2,
+	#     workers=10)

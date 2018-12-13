@@ -1,0 +1,36 @@
+Model name is  100epochimprovedData2
+doesnt_match res:
+our_model:
+favorable
+newModel:
+favorable
+
+
+doesnt_match res:
+our_model:
+obama
+newModel:
+obama
+
+
+most_similar ex res:
+our_model:
+[('latinos', 0.6830320358276367), ('(including', 0.6655077934265137), ('minorities', 0.6600581407546997), ('non-voters', 0.6593189239501953), ('male', 0.651913046836853)]
+newModel:
+[('hivinfected', 0.5074973106384277), ('reproductive', 0.5016121864318848), ('sterilization', 0.4950098693370819), ('sexually', 0.4695378243923187), ('contraception', 0.4683105945587158)]
+
+
+most_similar res:
+our_model:
+[('democrats', 0.7632335424423218), ('dems', 0.7000274062156677), ('repeal', 0.6927065253257751), ('filibuster', 0.6834850311279297), ('trumpcare', 0.6723067760467529)]
+newModel:
+[('obamacare’s', 0.46847981214523315), ('republicans’', 0.462575763463974), ('obamacare”', 0.44259974360466003), ('gop', 0.41675084829330444), ('patientsfirst', 0.41220641136169434)]
+
+
+most_similar res:
+our_model:
+[('well-being', 0.6981337070465088), ('trauma', 0.6971148252487183), ('same-sex', 0.6907579898834229), ('breast', 0.6784332990646362), ('survivors', 0.6776483058929443)]
+newModel:
+[('rape', 0.4986518621444702), ('abortions', 0.49825286865234375), ('privileges', 0.4963968098163605), ('incest', 0.4950711727142334), ('religious', 0.4934808015823364)]
+
+

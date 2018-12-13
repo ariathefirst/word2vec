@@ -1,0 +1,29 @@
+Model name is  improvedData2
+most_similar ex res:
+our_model:
+[('latinos', 0.6830320358276367), ('(including', 0.6655077934265137), ('minorities', 0.6600581407546997), ('non-voters', 0.6593189239501953), ('male', 0.651913046836853)]
+newModel:
+[('condoms', 0.5206580758094788), ('HIVinfected', 0.5073122978210449), ('sexually', 0.4854058027267456), ('sterilization', 0.4846644699573517), ('Women', 0.47460660338401794)]
+
+
+doesnt_match res:
+our_model:
+favorable
+newModel:
+favorable
+
+
+most_similar res:
+our_model:
+[('democrats', 0.7632335424423218), ('dems', 0.7000274062156677), ('repeal', 0.6927065253257751), ('filibuster', 0.6834850311279297), ('trumpcare', 0.6723067760467529)]
+newModel:
+[('Ryancare', 0.512785017490387), ('electionPresidente', 0.5003972053527832), ('survive’”', 0.491965651512146), ('far”', 0.48798808455467224), ('chaotically', 0.486846387386322)]
+
+
+most_similar res:
+our_model:
+[('well-being', 0.6981337070465088), ('trauma', 0.6971148252487183), ('same-sex', 0.6907579898834229), ('breast', 0.6784332990646362), ('survivors', 0.6776483058929443)]
+newModel:
+[('religious', 0.5774183869361877), ('samesex', 0.5173925161361694), ('contraceptive', 0.5159451961517334), ('rights', 0.501528799533844), ('civil', 0.4886022210121155)]
+
+
